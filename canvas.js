@@ -40,7 +40,7 @@ sprite["pellet"]={
     spr[2]=spr[2]+dir[2];
   },
   onTurn:function(){},
-  imgs=[<images>] //Help how do I do this
+  //imgs=[<images>] //Help how do I do this
 };
 
 sprite["misterAsshole"]={
@@ -48,7 +48,7 @@ sprite["misterAsshole"]={
   onInit:function(){},
   onTick:function(){},
   onTurn:function(){},
-  imgs:[<images>] //Seriously how the fuck do I do this
+  //imgs:[<images>] //Seriously how the fuck do I do this
 };
 
 onSprites=[
@@ -82,8 +82,9 @@ function tick(time){
   
   //Draw heart
   
-  Window.requestAnimationFrame(tick);
+  window.requestAnimationFrame(tick);
 }
 
 ////////////////////////And now we start...After I write more stuff
 
+window.requestAnimationFrame(tick)
