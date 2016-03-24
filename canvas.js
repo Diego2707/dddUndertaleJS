@@ -25,7 +25,12 @@ var canvas=document.getElementById('canvas'),
 sprite["pellet"]={
   onHit=function(){
     HP=1;
-    delete onSprites["pellet"];
+      for i=0,i<onSprites.length,i++{
+        if(onSprites[i][0]=="pellet"){
+          onSprites.splice(i,1);
+        }
+      }
+    }
   }
   onInit=function(spr){
     let angle=Math.tan((heartY-spr[2])/(heartX-spr[1]));
