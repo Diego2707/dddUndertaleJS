@@ -25,7 +25,7 @@ var canvas=document.getElementById('canvas'),
 sprite["pellet"]={
   onHit:function(){
     HP=1;
-    for i=0,i<onSprites.length,i++{
+    for(i=0,i<onSprites.length,i++){
       if(onSprites[i][0]=="pellet"){
         onSprites.splice(i,1);
       }
