@@ -18,9 +18,9 @@ window.onblur=function(){
 
 var canvas=document.getElementById('canvas'),
     ctx=canvas.getContext('2d'),
-    heartSpr=new Image(),
+    heartX=0,heartY=0,heartL=15,
     sprite={},onSprites=[],
-    heartX=0,heartY=0,
+    heartSpr=new Image(),
     HP=20,items=[];
 
 heartSpr.src="https://static.tumblr.com/f6c48b514aa41da79dd0eb3d931019fb/ycfppqo/81no29htn/tumblr_static_9xc2tj68dcwg4w8gw4so0csco.png"
@@ -49,8 +49,8 @@ sprite["misterAsshole"]={
   onTick:function(spr){
     if(!(heartX>spr[1]+spr[3]||
         heartY>spr[2]+spr[4]||
-        heartX+20<spr[1]||
-        heartY+20<spr[2])){
+        heartX+heartL<spr[1]||
+        heartY+heartL<spr[2])){
       heartX=heartY=0;
     }
   },
@@ -89,7 +89,7 @@ function tick(time){
     ctx.rotate(0);
   }
   
-  ctx.drawImage(heartSpr,heartX,heartY,20,20)
+  ctx.drawImage(heartSpr,heartX,heartY,heartL,heartL)
   
   window.requestAnimationFrame(tick);
 }
