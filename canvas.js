@@ -51,7 +51,9 @@ var flowey0=new Image();
 flowey0.src="https://36.media.tumblr.com/c4129763e1fe8778d3f01432159c3863/tumblr_inline_nxbveapWhp1tfvt5p_540.png"
 
 sprite["misterAsshole"]={
-  onHit:function(){},
+  onHit:function(){
+    heartX=heartY=0;
+  },
   onInit:function(){
   	return true;
   },
