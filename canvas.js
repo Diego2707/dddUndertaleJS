@@ -23,32 +23,32 @@ var canvas=document.getElementById('canvas'),
     HP=20,items=[];
 
 sprite["pellet"]={
-  onHit=function(){
+  onHit:function(){
     HP=1;
-      for i=0,i<onSprites.length,i++{
-        if(onSprites[i][0]=="pellet"){
-          onSprites.splice(i,1);
-        }
+    for i=0,i<onSprites.length,i++{
+      if(onSprites[i][0]=="pellet"){
+        onSprites.splice(i,1);
       }
     }
-  }
-  onInit=function(spr){
+  },
+  onInit:function(spr){
     let angle=Math.tan((heartY-spr[2])/(heartX-spr[1]));
     return [Math.cos(angle),Math.sin(angle)];
-  }
-  onTick=function(dir){
+  },
+  onTick:function(dir){
     spr[1]=spr[1]+dir[1];
     spr[2]=spr[2]+dir[2];
-  }
-  onTurn=function(){}
+  },
+  onTurn:function(){},
   imgs=[<images>] //Help how do I do this
 };
 
 sprite["misterAsshole"]={
-  onHit=function(){}
-  onInit=function(){}
-  onTick=function(){}
-  imgs=[<images>] //Seriously how the fuck do I do this
+  onHit:function(){},
+  onInit:function(){},
+  onTick:function(){},
+  onTurn:function(){},
+  imgs:[<images>] //Seriously how the fuck do I do this
 };
 
 onSprites=[
