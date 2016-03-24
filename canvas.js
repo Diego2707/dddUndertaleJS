@@ -27,11 +27,11 @@ heartSpr.src="https://static.tumblr.com/f6c48b514aa41da79dd0eb3d931019fb/ycfppqo
 
 
 sprite["pellet"]={
-  onInit:function(){
+  onInit:function(spr){
     let angle=Math.tan((heartY-spr[2])/(heartX-spr[1]));
     return [Math.cos(angle),Math.sin(angle)];
   },
-  onTick:function(dir){
+  onTick:function(spr,dir){
     spr[1]=spr[1]+dir[1];
     spr[2]=spr[2]+dir[2];
   },
@@ -46,7 +46,7 @@ sprite["misterAsshole"]={
   onInit:function(){
   	return true;
   },
-  onTick:function(){
+  onTick:function(spr){
     if(!(heartX>spr[1]+spr[3]||
         heartY>spr[2]+spr[4]||
         heartX+20<spr[1]||
@@ -83,7 +83,7 @@ function tick(time){
     if(spr[7]==undefined){
       spr[7]=sprite[spr[0]].onInit(spr);
     }
-    sprite[spr[0]].onTick(spr[7]);
+    sprite[spr[0]].onTick(spr,spr[7]);
     ctx.rotate(spr[6]);
     ctx.drawImage(sprite[spr[0]].imgs[spr[5]],spr[1],spr[2],spr[3],spr[4]);
     ctx.rotate(0);
