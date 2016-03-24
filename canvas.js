@@ -86,9 +86,9 @@ function tick(time){
       spr[7]=sprite[spr[0]].onInit(spr);
     }
     sprite[spr[0]].onTick(spr[7]);
-    canvas.rotate(spr[6]);
+    ctx.rotate(spr[6]);
     ctx.drawImage(sprite[spr[0]].imgs[spr[5]],spr[1],spr[2],spr[3],spr[4]);
-    canvas.rotate(0);
+    ctx.rotate(0);
   }
   
   ctx.drawImage(heartSpr,heartX,heartY,20,20)
