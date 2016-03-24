@@ -44,8 +44,11 @@ sprite["pellet"]={
     spr[2]=spr[2]+dir[2];
   },
   onTurn:function(){},
-  //imgs=[<images>] //Help how do I do this
+  imgs:[]
 };
+
+var flowey0=new Image();
+flowey0.src="https://36.media.tumblr.com/c4129763e1fe8778d3f01432159c3863/tumblr_inline_nxbveapWhp1tfvt5p_540.png"
 
 sprite["misterAsshole"]={
   onHit:function(){},
@@ -54,12 +57,12 @@ sprite["misterAsshole"]={
   },
   onTick:function(){},
   onTurn:function(){},
-  //imgs:[<images>] //Seriously how the fuck do I do this
+  imgs:[flowey0]
 };
 
 onSprites=[
-  //Sprite name,x,y,sizeX,sizeY,img,rot,new?
-  ["misterAsshole",500,500,300,300,0,0]
+  //Sprite name,x,y,sizeX,sizeY,img,rot
+  ["misterAsshole",200,0,100,100,0,0]
 ];
 
 
@@ -83,7 +86,7 @@ function tick(time){
       spr[7]=sprite[spr[0]].onInit(spr);
     }
     sprite[spr[0]].onTick(spr[7]);
-    //Draw sprite from spr[5]
+    ctx.drawImage(sprite[spr[0]].imgs[spr[5]],spr[1],spr[2],spr[3],spr[4]);
   }
   
   ctx.drawImage(heartSpr,heartX,heartY,20,20)
