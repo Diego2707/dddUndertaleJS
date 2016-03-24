@@ -27,15 +27,7 @@ heartSpr.src="https://static.tumblr.com/f6c48b514aa41da79dd0eb3d931019fb/ycfppqo
 
 
 sprite["pellet"]={
-  onHit:function(){
-    HP=1;
-    for(i=0;i<onSprites.length;i++){
-      if(onSprites[i][0]=="pellet"){
-        onSprites.splice(i,1);
-      }
-    }
-  },
-  onInit:function(spr){
+  onInit:function(){
     let angle=Math.tan((heartY-spr[2])/(heartX-spr[1]));
     return [Math.cos(angle),Math.sin(angle)];
   },
@@ -51,13 +43,17 @@ var flowey0=new Image();
 flowey0.src="https://36.media.tumblr.com/c4129763e1fe8778d3f01432159c3863/tumblr_inline_nxbveapWhp1tfvt5p_540.png"
 
 sprite["misterAsshole"]={
-  onHit:function(){
-    heartX=heartY=0;
-  },
   onInit:function(){
   	return true;
   },
-  onTick:function(){},
+  onTick:function(){
+    if(!(heartX>spr[1]+spr[3]||
+        heartY>spr[2]+spr[4]||
+        heartX+20<spr[1]||
+        heartY+20<spr[2])){
+      heartX=heartY=0;
+    }
+  },
   onTurn:function(){},
   imgs:[flowey0]
 };
