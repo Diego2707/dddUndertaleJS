@@ -53,7 +53,7 @@ sprite["misterAsshole"]={
 
 onSprites=[
   //Sprite name,x,y,sizeX,sizeY,img,rot,new?
-  ["misterAsshole",500,500,300,300,0,0,true]
+  ["misterAsshole",500,500,300,300,0,0]
 ];
 
 
@@ -72,7 +72,7 @@ function tick(time){
   }
   for(let i=0;i<onSprites.length;i++){
     let spr=onSprites[i];
-    if(spr[7]==true){
+    if(spr[7]==undefined){
       spr[7]=sprite[spr[0]].onInit(spr);
     }
     sprite[spr[0]].onTick(spr[7]);
