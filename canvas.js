@@ -19,7 +19,7 @@ Window.onblur=function(){
 var canvas=document.getElementById('canvas'),
     ctx=canvas.getContext('2d'),
     heartX=0,heartY=0,heartL=20,
-    sprite={},onSprites={},
+    sprite={},onSprites=[],
     HP=20,items=[];
 
 sprite["pellet"]={
