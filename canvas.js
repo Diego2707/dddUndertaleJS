@@ -18,7 +18,7 @@ Window.onblur=function(){
 
 var canvas=document.getElementById('canvas'),
     ctx=canvas.getContext('2d'),
-    heartX=0,heartY=0,heartL=20,
+    heartX=0,heartY=0,
     sprite={},onSprites=[],
     HP=20,items=[];
 
@@ -36,14 +36,14 @@ sprite["pellet"]={
     spr[2]=spr[2]+dir[2];
   }
   onTurn=function(){}
-  imgs=[<images>]
+  imgs=[<images>] //Help how do I do this
 };
 
 sprite["misterAsshole"]={
   onHit=function(){}
   onInit=function(){}
   onTick=function(){}
-  imgs=[<images>]
+  imgs=[<images>] //Seriously how the fuck do I do this
 };
 
 onSprites=[
@@ -71,9 +71,11 @@ function tick(time){
       spr[7]=sprite[spr[0]].onInit(spr);
     }
     sprite[spr[0]].onTick(spr[7]);
+    
+    //Draw sprite from spr[5]
   }
   
-  
+  //Draw heart
   
   Window.requestAnimationFrame(tick);
 }
