@@ -35,7 +35,6 @@ sprite["pellet"]={
     spr[1]=spr[1]+dir[1];
     spr[2]=spr[2]+dir[2];
   },
-  onTurn:function(){},
   imgs:[]
 };
 
@@ -54,7 +53,6 @@ sprite["misterAsshole"]={
       heartX=heartY=0;
     }
   },
-  onTurn:function(){},
   imgs:[flowey0]
 };
 
